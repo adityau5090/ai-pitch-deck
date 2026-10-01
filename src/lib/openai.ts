@@ -1,7 +1,7 @@
 import OpenAI from "openai"
 
 const IMAGE_MODEL = "gpt-image-1-mini";
-const IMAGE_SIZE = "1024*1024";
+const IMAGE_SIZE ="1024x1024";
 
 let openAIClient: OpenAI | null = null;
 
