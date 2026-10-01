@@ -1,6 +1,5 @@
 import { Agent, run, type InputGuardrail, type OutputGuardrail } from "@openai/agents";
 import { z } from "zod"
-import { isValid } from "zod/v3";
 
 function getInputText(input: string | unknown[]): string {
     if(typeof input == "string"){
@@ -9,7 +8,7 @@ function getInputText(input: string | unknown[]): string {
     return JSON.stringify(input);
 }
 
-export const validProjectIdeaGuartrail: InputGuardrail = {
+export const validProjectIdeaGuardrail: InputGuardrail = {
     name: "valid_project_idea",
     execute: async ({ input }) => {
         const text = getInputText(input).trim();
@@ -18,7 +17,7 @@ export const validProjectIdeaGuartrail: InputGuardrail = {
         return {
             tripwireTriggered: tooShort,
             outputInfo: tooShort
-                ? { reason : "Project idea is too short. It must be atleat 20 characters"}
+                ? { reason : "Project idea is too short. It must be atleast 20 characters"}
                 : undefined,  
         }
     }

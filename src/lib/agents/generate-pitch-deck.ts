@@ -1,8 +1,6 @@
 import { InputGuardrailTripwireTriggered, OutputGuardrailTripwireTriggered, run } from "@openai/agents";
 import { pitchDeckAgent } from "./pitch-deck-agent";
 import { PitchDeck, PitchDeckSchema } from "../schemas/pitch-deck";
-import { err } from "inngest/types";
-import { output } from "zod";
 
 export class PitchDeckGenerationError extends Error {
     readonly reason?: string;
